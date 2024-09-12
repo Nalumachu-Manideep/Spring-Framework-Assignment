@@ -10,7 +10,7 @@
   <properties>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <sonar.organization>nalumachu's</sonar.organization>
+    <sonar.organization>Nalumachu's</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.projectKey>nalumachu-s_database-webapp</sonar.projectKey>
     <sonar.exclusions>**/entity/**, **/dao/**</sonar.exclusions>
