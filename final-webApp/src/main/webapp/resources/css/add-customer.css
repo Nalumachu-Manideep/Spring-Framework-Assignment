@@ -1,0 +1,96 @@
+html, body {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 0px;
+    font-family: Montserrat,Verdana, Arial, Helvetica, sans-serif;
+    background-color: rgb(22,27,28); /* Dark background */
+}
+
+h2 {
+    color: rgb(239,238,238); /* Light text color for better contrast */
+}
+
+form {
+	margin-top: 10px;
+}
+
+label {
+	font-size: 18px;
+
+	display: block;
+	text-align: right;
+	margin-right: 10px;
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+input {
+	width: 250px;
+	border: 1px solid #666;
+	border-radius: 3px;
+	padding: 4px;
+	font-size: 16px;
+}
+
+.save {
+	font-weight: bold;
+	font-size:18px;
+	width: 100px;
+	padding: 5px 10px;
+	margin-top: 30px;
+	background: #cccccc;
+}
+
+table {
+	border-style:none;
+
+}
+
+tr:nth-child(even) {background: rgb(33,33,33)}
+tr:nth-child(odd) {background: rgb(44,44,44)}
+
+tr {
+	border-style:none;
+	text-align:left;
+	color:#FFFEFF;
+	font-weight:600;
+}
+
+#wrapper {
+    width: 100%;
+    margin-top: 0px;
+}
+
+#header {
+    width: 70%;
+    background-color: rgb(39,150,60);
+    margin-top: 0px;
+    padding: 15px 0px 15px 15px;
+}
+
+#header h2 {
+    width: 100%;
+    margin: auto;
+    color: rgb(239,238,238); /* Light text for header */
+}
+
+#container {
+    width: 100%;
+    margin: auto;
+}
+
+#container h3 {
+    color: rgb(39,150,60);
+    font-size:22px; /* Light color for h3 */
+}
+
+#container #content {
+    margin-top: 20px;
+}
+
+.error{
+    color:red;
+    font-size:16px;
+    font-weight:200;
+}
+
