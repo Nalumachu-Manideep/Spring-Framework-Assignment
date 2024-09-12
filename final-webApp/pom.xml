@@ -164,6 +164,14 @@
     <finalName>final-webApp</finalName>
     <plugins>
       <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.5.0</version>
+      <configuration>
+        <testFailureIgnore>false</testFailureIgnore>
+      </configuration>
+    </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.11.0</version>
@@ -176,7 +184,6 @@
           </compilerArgs>
         </configuration>
       </plugin>
-
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-war-plugin</artifactId>
@@ -216,6 +223,7 @@
           </execution>
         </executions>
       </plugin>
+      
     </plugins>
   </build>
   <profiles>
