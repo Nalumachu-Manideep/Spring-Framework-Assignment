@@ -8,8 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Orders</title>
         <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/style.css" />
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
     </head>
     <body>
+        <div class="navbar">
+            <a href="${pageContext.request.contextPath}/product/list">Product List</a>
+            <a href="${pageContext.request.contextPath}/order/list">Order List</a>
+        </div>
         <div id="wrapper">
             <div id="header">
                  <h2>E Commerce Featured Products</h2>

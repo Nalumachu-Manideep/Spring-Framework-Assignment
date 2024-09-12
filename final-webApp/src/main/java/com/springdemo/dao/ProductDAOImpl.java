@@ -13,8 +13,12 @@ import java.util.List;
 public class ProductDAOImpl implements ProductDAO {
 
     //need to inject the session factory
-    @Autowired
     private SessionFactory sessionFactory;
+    @Autowired
+    public ProductDAOImpl(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
+
     @Override
     public List<Product> getProducts() {
         //get yhe current hibernate session
@@ -54,7 +58,6 @@ public class ProductDAOImpl implements ProductDAO {
         theQuery.setParameter("id",id);
         theQuery.executeUpdate();
 
-//        currentSession.delete(theId);
     }
 
     @Override

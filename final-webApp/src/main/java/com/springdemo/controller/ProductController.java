@@ -1,6 +1,5 @@
 package com.springdemo.controller;
 
-import com.springdemo.dao.ProductDAO;
 import com.springdemo.entity.Product;
 import com.springdemo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,9 +15,12 @@ import java.util.List;
 @RequestMapping("/product")
 public class ProductController {
 
-    //need to inject the product dao
-    @Autowired
     private ProductService productService;
+
+    @Autowired
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
     @GetMapping("/list")
     public  String listProducts(Model theModel){
@@ -39,9 +41,7 @@ public class ProductController {
     @PostMapping("/saveProduct")
     public String saveProduct(@Valid @ModelAttribute("product") Product theProduct, BindingResult bindingResult,Model model){
         if (bindingResult.hasErrors()) {
-            // Add the product back to the model to retain form data on error
             model.addAttribute("product", theProduct);
-            // Return the form with validation errors displayed
             return "product-form";
         }
         // save the customer using our service

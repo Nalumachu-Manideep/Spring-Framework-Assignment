@@ -15,12 +15,12 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService {
 
     // Need to inject Product DAO
-    @Autowired
-    private ProductDAO productDAO;
 
-    // Validator for additional validation in service layer
+    private ProductDAO productDAO;
     @Autowired
-    private Validator validator;
+    public ProductServiceImpl(ProductDAO productDAO) {
+        this.productDAO = productDAO;
+    }
 
     @Override
     @Transactional

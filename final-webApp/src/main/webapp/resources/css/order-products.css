@@ -55,6 +55,9 @@ tr {
 	color:#FFFEFF;
 	font-weight:600;
 }
+th{
+    color:rgb(238, 117, 11);
+}
 
 #wrapper {
     width: 100%;
@@ -94,4 +97,18 @@ tr {
     font-weight:200;
 }
 
+#Date_Heading{
+    color:#FFFEFF;
+}
+
+.link-button{
+    color:rgb(21, 233, 229);
+    margin-top:10px;
+    padding:10px;
+}
+.back-button{
+    color:rgb(45, 11, 238);
+    margin-top:10px;
+    padding:10px;
+}
 

@@ -5,17 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Products</title>
-    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/add-customer.css" />
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/order-products.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/home.css">
 </head>
 <body>
+    <div class="navbar">
+        <a href="${pageContext.request.contextPath}/product/list">Product List</a>
+        <a href="${pageContext.request.contextPath}/order/list">Order List</a>
+    </div>
     <div id="wrapper">
         <div id="header">
             <h2>Products for Order</h2>
         </div>
         <div id="container">
             <div id="content">
-                <h3>Order ID: ${order.id}</h3>
-                <h4>Order Date: ${order.orderDate}</h4>
+                <h3 >Order ID: ${order.id}</h3>
+                <h4 id="Date_Heading">Order Date: ${order.orderDate}</h4>
 
                 <table>
                     <thead>
@@ -36,8 +41,8 @@
                     </tbody>
                 </table>
 
-                <a href="${pageContext.request.contextPath}/order/manage-products?orderId=${order.id}">Manage Products</a>
-                <a href="${pageContext.request.contextPath}/order/list">Back to List</a>
+                <a href="${pageContext.request.contextPath}/order/manage-products?orderId=${order.id}" class="link-button">Manage Products</a>
+                <a href="${pageContext.request.contextPath}/order/list" class="back-button">Back to List</a>
             </div>
         </div>
     </div>

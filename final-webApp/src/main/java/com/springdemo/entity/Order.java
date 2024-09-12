@@ -38,7 +38,4 @@ public class Order {
     )
     private List<Product> products=new ArrayList<>();
 
-    public void addProduct(Product product){
-        products.add(product);
-    }
 }

@@ -40,5 +40,4 @@ public class Product {
     @ToString.Exclude
     private List<Order> orders;
 
-
 }
