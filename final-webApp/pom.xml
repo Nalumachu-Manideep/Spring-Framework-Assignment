@@ -170,6 +170,10 @@
         <configuration>
           <source>22</source>
           <target>22</target>
+          <fork>true</fork> <!-- Enable using a separate Java process -->
+          <compilerArgs>
+            <arg>--enable-preview</arg> <!-- Enable preview features if necessary -->
+          </compilerArgs>
         </configuration>
       </plugin>
 
