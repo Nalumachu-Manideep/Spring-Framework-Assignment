@@ -33,7 +33,9 @@ public class ProductServiceImplTest {
 
 
     @Before
-    public void setup(){}
+    public void setup(){
+        //setUp
+    }
 
     @Test
     public void testGetProducts(){

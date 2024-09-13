@@ -1,5 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"  %>
-<html>
+<html lang="en">
     <head>
         <title>
             Save Product
@@ -25,7 +25,7 @@
             <form:form action="saveProduct" modelAttribute="product" method="POST">
                 <form:hidden path="id" />
                 <table>
-                    <tbody>
+
                         <tr>
                             <td><label>Product name:</label></td>
                             <td>
@@ -53,7 +53,7 @@
                             <td><input type="submit" value="Save" class="save" /></td>
                         </tr>
 
-                    </tbody>
+
                 </table>
             </form:form>
             <div style="clear; both;"></div>

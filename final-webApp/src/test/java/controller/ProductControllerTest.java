@@ -37,7 +37,9 @@ public class ProductControllerTest {
     private ProductController productController;
 
     @Before
-    public void setUp(){}
+    public void setUp(){
+        //setUp
+    }
 
     @Test
     public void testToListProducts(){

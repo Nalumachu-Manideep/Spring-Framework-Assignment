@@ -42,7 +42,9 @@ public class OrderControllerTest {
     private OrderController orderController;
 
     @Before
-    public void setUp() {}
+    public void setUp() {
+        //setup
+    }
 
     @Test
     public void testListOrders() {

@@ -17,6 +17,9 @@ public class ProductController {
 
     private ProductService productService;
 
+    private String product_form="product-form";
+    String product="product";
+
     @Autowired
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -34,15 +37,15 @@ public class ProductController {
     @GetMapping("/showFormForAdd")
     public String showFormForAdd(Model model){
         Product theProduct=new Product();
-        model.addAttribute("product", theProduct);
-        return "product-form";
+        model.addAttribute(product, theProduct);
+        return product_form;
     }
 
     @PostMapping("/saveProduct")
     public String saveProduct(@Valid @ModelAttribute("product") Product theProduct, BindingResult bindingResult,Model model){
         if (bindingResult.hasErrors()) {
-            model.addAttribute("product", theProduct);
-            return "product-form";
+            model.addAttribute(product, theProduct);
+            return product_form;
         }
         // save the customer using our service
         productService.saveProduct(theProduct);
@@ -53,9 +56,9 @@ public class ProductController {
     public String showFormForUpdate(@RequestParam("productId") int theId,Model theModel){
         Product theProduct=productService.getProduct(theId);
 
-        theModel.addAttribute("product",theProduct);
+        theModel.addAttribute(product,theProduct);
 
-        return "product-form";
+        return product_form;
     }
 
     @GetMapping("/delete")

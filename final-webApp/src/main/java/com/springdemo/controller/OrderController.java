@@ -19,6 +19,9 @@ public class OrderController {
     private  final OrderService orderService;
     private  final ProductService productService;
 
+    String order="order";
+    String order_form="order-form";
+
     @Autowired
     public OrderController(OrderService orderService, ProductService productService) {
         this.orderService = orderService;
@@ -38,15 +41,15 @@ public class OrderController {
     public String showFormForAdd(Model model){
         Order theOrder=new Order();
 
-        model.addAttribute("order", theOrder);
-        return "order-form";
+        model.addAttribute(order, theOrder);
+        return order_form;
     }
 
     @PostMapping("/saveOrder")
     public String saveOrder(@Valid @ModelAttribute("order") Order theOrder, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()) {
-            model.addAttribute("order", theOrder);
-            return "order-form";
+            model.addAttribute(order, theOrder);
+            return order_form;
         }
         orderService.saveOrder(theOrder);
         return "redirect:list";
@@ -60,8 +63,8 @@ public class OrderController {
 
     @GetMapping("/products")
     public String showOrderProducts(@RequestParam("orderId") int id, Model model) {
-        Order order=orderService.getOrderByID(id);
-        model.addAttribute("order", order);
+        Order theOrder=orderService.getOrderByID(id);
+        model.addAttribute(order, theOrder);
         return "order-products";
     }
 
@@ -70,7 +73,7 @@ public class OrderController {
     public String editOrderProducts(@RequestParam("orderId") int orderId, Model model) {
         Order theorder=orderService.getOrderByID(orderId);
         List<Product> allProducts=productService.getProducts();
-        model.addAttribute("order",theorder);
+        model.addAttribute(order,theorder);
         model.addAttribute("allProducts",allProducts);
         return "view-order-products";
     }
