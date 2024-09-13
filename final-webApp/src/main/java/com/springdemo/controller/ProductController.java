@@ -17,7 +17,7 @@ public class ProductController {
 
     private ProductService productService;
 
-    private String product_form="product-form";
+    private String productForm="product-form";
     String product="product";
 
     @Autowired
@@ -38,14 +38,14 @@ public class ProductController {
     public String showFormForAdd(Model model){
         Product theProduct=new Product();
         model.addAttribute(product, theProduct);
-        return product_form;
+        return productForm;
     }
 
     @PostMapping("/saveProduct")
     public String saveProduct(@Valid @ModelAttribute("product") Product theProduct, BindingResult bindingResult,Model model){
         if (bindingResult.hasErrors()) {
             model.addAttribute(product, theProduct);
-            return product_form;
+            return productForm;
         }
         // save the customer using our service
         productService.saveProduct(theProduct);
@@ -58,7 +58,7 @@ public class ProductController {
 
         theModel.addAttribute(product,theProduct);
 
-        return product_form;
+        return productForm;
     }
 
     @GetMapping("/delete")

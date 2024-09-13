@@ -3,7 +3,6 @@ package service;
 import com.springdemo.dao.OrderDAO;
 import com.springdemo.entity.Order;
 import com.springdemo.service.OrderServiceImpl;
-import org.hibernate.Hibernate;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

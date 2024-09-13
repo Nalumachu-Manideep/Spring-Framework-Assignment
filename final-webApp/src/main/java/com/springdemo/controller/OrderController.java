@@ -20,7 +20,7 @@ public class OrderController {
     private  final ProductService productService;
 
     String order="order";
-    String order_form="order-form";
+    String orderForm="order-form";
 
     @Autowired
     public OrderController(OrderService orderService, ProductService productService) {
@@ -42,14 +42,14 @@ public class OrderController {
         Order theOrder=new Order();
 
         model.addAttribute(order, theOrder);
-        return order_form;
+        return orderForm;
     }
 
     @PostMapping("/saveOrder")
     public String saveOrder(@Valid @ModelAttribute("order") Order theOrder, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()) {
             model.addAttribute(order, theOrder);
-            return order_form;
+            return orderForm;
         }
         orderService.saveOrder(theOrder);
         return "redirect:list";
@@ -83,13 +83,13 @@ public class OrderController {
     @PostMapping("/saveProducts")
     public String saveOrderProducts(@RequestParam("orderId") int orderId,
                                  @RequestParam(value = "productIds", required = false) List<Integer> productIds) {
-        Order order = orderService.getOrderByID(orderId);
+        Order theOrder = orderService.getOrderByID(orderId);
 
 
         List<Product> selectedProducts = productService.getProductsByIds(productIds);
-        order.setProducts(selectedProducts);
+        theOrder.setProducts(selectedProducts);
 
-        orderService.saveOrder(order);
+        orderService.saveOrder(theOrder);
         return "redirect:/order/list";
     }
 

@@ -2,7 +2,6 @@ package service;
 
 import com.springdemo.dao.ProductDAO;
 import com.springdemo.entity.Product;
-import com.springdemo.service.ProductService;
 import com.springdemo.service.ProductServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +9,6 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.validation.BindingResult;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +24,7 @@ public class ProductServiceImplTest {
     @Mock
     private ProductDAO productDAO;
 
-    private BindingResult bindingResult;
+
 
     @InjectMocks
     private ProductServiceImpl productService;
